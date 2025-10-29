@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta Pre-Lanzamiento - DEFXON SerenoX</title>
+    
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Carga de Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilo base con la fuente Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Fondo de rejilla sutil para el body */
+        .body-grid-pattern {
+             background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+             background-size: 40px 40px;
+        }
+    </style>
+
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // Paleta principal (Modo Oscuro)
+                        'brand-blue': {
+                            '300': '#93c5fd', // Acento brillante
+                            '500': '#3b82f6', // Acento principal
+                            '600': '#2563eb', // Acento hover
+                        },
+                        'brand-gray': {
+                            '100': '#f3f4f6', // Texto claro
+                            '300': '#d1d5db', // Texto secundario
+                            '600': '#4b5563', // Bordes
+                            '700': '#374151', // Fondo de tarjeta
+                            '800': '#1f2937', // Fondo de sección
+                            '900': '#111827', // Fondo principal
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-gray-900 text-brand-gray-100 antialiased body-grid-pattern">
+
+    <!-- Encabezado simple con el logo -->
+    <header class="bg-brand-gray-900 border-b border-brand-gray-700 py-4">
+        <div class="container mx-auto px-6 text-center">
+            <a href="defxon-company.html" class="text-3xl font-extrabold text-white">
+                DEFXON
+            </a>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal de la Encuesta -->
+    <main class="container mx-auto max-w-3xl px-6 py-16">
+
+        <!--
+            IMPORTANTE:
+            Reemplaza la URL en 'action' por tu URL única de Formspree
+            para empezar a recibir las respuestas.
+        -->
+        <form action="https://formspree.io/f/TU_ID_UNICO_AQUI" method="POST">
+
+            <!-- Sección de Introducción -->
+            <div class="text-center mb-12">
+                <h1 class="text-3xl lg:text-5xl font-extrabold text-white">Ayúdanos a Crear el Futuro del Confort Térmico</h1>
+                <p class="mt-4 text-lg text-brand-gray-300">
+                    Somos DEFXON Company, fundadores Francis Alcantara, Darlyn Alcantara y Edual Jimenez. Estamos desarrollando **SerenoX**, un revolucionario *wearable* de refrigeración corporal inteligente.
+                </p>
+                <p class="mt-4 text-brand-gray-300">Tu opinión es vital. Esta encuesta de 5 minutos nos ayudará a diseñar el mejor producto posible para ti.</p>
+            </div>
+
+            <!-- Separador -->
+            <hr class="border-brand-gray-700 my-10">
+
+            <!-- Sección 1: Tu Experiencia con el Calor -->
+            <div class="space-y-8">
+                <h2 class="text-2xl font-bold text-brand-blue-300">Sección 1: Tu Experiencia con el Calor</h2>
+
+                <!-- Pregunta 1 -->
+                <div>
+                    <label class="text-lg font-semibold text-white block mb-3">1. ¿Con qué frecuencia sientes incomodidad por el calor en tu vida diaria?</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q1_frecuencia" value="Nunca" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            Nunca
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q1_frecuencia" value="Rara vez" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            Rara vez
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q1_frecuencia" value="A veces" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            A veces
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q1_frecuencia" value="A menudo" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            A menudo
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q1_frecuencia" value="Constantemente" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            Constantemente
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 2 -->
+                <div>
+                    <label class="text-lg font-semibold text-white block mb-3">2. ¿En qué situaciones te afecta MÁS el calor? (Puedes marcar varias)</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q2_situaciones[]" value="Deportes" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            Haciendo ejercicio o practicando deportes
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q2_situaciones[]" value="Trabajo Oficina" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            Trabajando (en oficina o en casa)
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q2_situaciones[]" value="Trabajo Aire Libre" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            Trabajando al aire libre
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q2_situaciones[]" value="Transporte" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            En el transporte público o tu vehículo
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q2_situaciones[]" value="Dormir" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            Intentando dormir
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q2_situaciones[]" value="Estando en casa" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            Simplemente estando en casa
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q2_situaciones[]" value="Eventos sociales" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            Eventos sociales o al aire libre
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q2_situaciones_otra_check" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            Otra:
+                            <input type="text" name="q2_situaciones_otra_texto" class="ml-2 bg-brand-gray-800 border border-brand-gray-600 rounded text-sm p-1">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 3 -->
+                <div>
+                    <label class="text-lg font-semibold text-white block mb-3">3. ¿Qué métodos usas actualmente para refrescarte? (Puedes marcar varias)</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q3_metodos[]" value="Aire Acondicionado" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            Aire Acondicionado
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q3_metodos[]" value="Abanico" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            Abanico (Ventilador)
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q3_metodos[]" value="Bebidas frias" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            Bebidas frías
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q3_metodos[]" value="Duchas" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            Toallas húmedas o duchas frías
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q3_metodos[]" value="Ropa ligera" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            Ropa ligera
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q3_metodos[]" value="Nada" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            Soportar el calor sin hacer nada
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="checkbox" name="q3_metodos_otra_check" class="mr-2 text-brand-blue-500 rounded focus:ring-brand-blue-500">
+                            Otra:
+                            <input type="text" name="q3_metodos_otra_texto" class="ml-2 bg-brand-gray-800 border border-brand-gray-600 rounded text-sm p-1">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 4 -->
+                <div>
+                    <label class="text-lg font-semibold text-white block mb-3">4. En una escala del 1 (Muy Insatisfecho) al 5 (Muy Satisfecho), ¿qué tan satisfecho estás con estas soluciones?</label>
+                    <div class="flex flex-wrap gap-4 text-center">
+                        <label class="flex-1">
+                            <input type="radio" name="q4_satisfaccion" value="1" class="sr-only" checked>
+                            <span class="block p-4 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">1<br><span class="text-xs text-brand-gray-300">(Muy Insatisfecho)</span></span>
+                        </label>
+                        <label class="flex-1">
+                            <input type="radio" name="q4_satisfaccion" value="2" class="sr-only">
+                            <span class="block p-4 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">2</span>
+                        </label>
+                        <label class="flex-1">
+                            <input type="radio" name="q4_satisfaccion" value="3" class="sr-only">
+                            <span class="block p-4 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">3<br><span class="text-xs text-brand-gray-300">(Neutral)</span></span>
+                        </label>
+                        <label class="flex-1">
+                            <input type="radio" name="q4_satisfaccion" value="4" class="sr-only">
+                            <span class="block p-4 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">4</span>
+                        </label>
+                        <label class="flex-1">
+                            <input type="radio" name="q4_satisfaccion" value="5" class="sr-only">
+                            <span class="block p-4 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">5<br><span class="text-xs text-brand-gray-300">(Muy Satisfecho)</span></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Separador -->
+            <hr class="border-brand-gray-700 my-10">
+
+            <!-- Sección 2: La Solución (SerenoX) -->
+            <div class="space-y-8">
+                <h2 class="text-2xl font-bold text-brand-blue-300">Sección 2: La Solución (SerenoX)</h2>
+                <p class="text-brand-gray-300">**SerenoX** es un dispositivo *wearable* que usas discretamente sobre tu cuerpo. Utiliza tecnología de enfriamiento activo para reducir tu temperatura corporal en tiempo real, de forma inteligente y silenciosa.</p>
+
+                <!-- Pregunta 5 -->
+                <div>
+                    <label class="text-lg font-semibold text-white block mb-3">5. Basado en esta breve descripción, ¿qué tan interesante te parece el concepto de "SerenoX"?</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q5_interes" value="1 - Nada interesante" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            (1) Nada interesante
+                        </label>
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q5_interes" value="2 - Poco interesante" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            (2) Poco interesante
+                        </label>
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q5_interes" value="3 - Neutral" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            (3) Neutral
+                        </label>
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q5_interes" value="4 - Interesante" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            (4) Interesante
+                        </label>
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q5_interes" value="5 - Extremadamente interesante" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            (5) Extremadamente interesante
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 6 -->
+                <div>
+                    <label class="text-lg font-semibold text-white block mb-3">6. ¿Para qué usarías PRINCIPALMENTE un dispositivo como SerenoX?</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q6_uso_principal" value="Rendimiento deportivo" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            Para mejorar mi rendimiento deportivo
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q6_uso_principal" value="Concentracion trabajo" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            Para mantenerme concentrado en el trabajo
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q6_uso_principal" value="Comodidad casa/exteriores" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            Para estar más cómodo en casa o en exteriores
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q6_uso_principal" value="Dormir" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            Para poder dormir mejor en noches calurosas
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q6_uso_principal" value="Condiciones medicas" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            Para aliviar condiciones médicas (ej. sofocos)
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Separador -->
+            <hr class="border-brand-gray-700 my-10">
+
+            <!-- Sección 3: Lo que Más te Importa -->
+            <div class="space-y-8">
+                <h2 class="text-2xl font-bold text-brand-blue-300">Sección 3: Lo que Más te Importa</h2>
+                <p class="text-brand-gray-300">Si fueras a usar SerenoX, ¿qué características serían más importantes para ti? (1=No importa, 5=Esencial)</p>
+
+                <!-- Pregunta 7 (Matriz) -->
+                <div class="space-y-6">
+                    <!-- 7.1 Potencia -->
+                    <div>
+                        <label class="text-lg font-semibold text-white block mb-3">Potencia de Enfriamiento (Qué tanto enfría):</label>
+                        <div class="flex flex-wrap gap-4 text-center">
+                            <label class="flex-1"><input type="radio" name="q7_potencia" value="1" class="sr-only" checked><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">1</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_potencia" value="2" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">2</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_potencia" value="3" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">3</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_potencia" value="4" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">4</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_potencia" value="5" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">5</span></label>
+                        </div>
+                    </div>
+                    <!-- 7.2 Batería -->
+                    <div>
+                        <label class="text-lg font-semibold text-white block mb-3">Duración de la Batería (Cuántas horas dura):</label>
+                        <div class="flex flex-wrap gap-4 text-center">
+                            <label class="flex-1"><input type="radio" name="q7_bateria" value="1" class="sr-only" checked><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">1</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_bateria" value="2" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">2</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_bateria" value="3" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">3</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_bateria" value="4" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">4</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_bateria" value="5" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">5</span></label>
+                        </div>
+                    </div>
+                    <!-- 7.3 Comodidad -->
+                    <div>
+                        <label class="text-lg font-semibold text-white block mb-3">Comodidad y Peso (Que no moleste al usarlo):</label>
+                        <div class="flex flex-wrap gap-4 text-center">
+                            <label class="flex-1"><input type="radio" name="q7_comodidad" value="1" class="sr-only" checked><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">1</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_comodidad" value="2" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">2</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_comodidad" value="3" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">3</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_comodidad" value="4" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">4</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_comodidad" value="5" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">5</span></label>
+                        </div>
+                    </div>
+                    <!-- 7.4 Diseño -->
+                    <div>
+                        <label class="text-lg font-semibold text-white block mb-3">Discreción/Diseño (Que se vea bien o se pueda ocultar):</label>
+                        <div class="flex flex-wrap gap-4 text-center">
+                            <label class="flex-1"><input type="radio" name="q7_diseno" value="1" class="sr-only" checked><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">1</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_diseno" value="2" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">2</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_diseno" value="3" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">3</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_diseno" value="4" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">4</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_diseno" value="5" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">5</span></label>
+                        </div>
+                    </div>
+                    <!-- 7.5 Control -->
+                    <div>
+                        <label class="text-lg font-semibold text-white block mb-3">Control Inteligente (Ej. una app para controlarlo):</label>
+                        <div class="flex flex-wrap gap-4 text-center">
+                            <label class="flex-1"><input type="radio" name="q7_control" value="1" class="sr-only" checked><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">1</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_control" value="2" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">2</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_control" value="3" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">3</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_control" value="4" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">4</span></label>
+                            <label class="flex-1"><input type="radio" name="q7_control" value="5" class="sr-only"><span class="block p-3 border border-brand-gray-600 rounded-lg cursor-pointer hover:bg-brand-gray-700">5</span></label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pregunta 8 -->
+                <div>
+                    <label class="text-lg font-semibold text-white block mb-3">8. ¿Qué característica te preocupa más de un dispositivo así?</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q8_preocupacion" value="Precio" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            El precio
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q8_preocupacion" value="Bateria" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            La duración de la batería
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q8_preocupacion" value="Comodidad" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            El peso o la comodidad
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q8_preocupacion" value="Seguridad" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            La seguridad del dispositivo
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q8_preocupacion" value="Efectividad" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            Que no enfríe lo suficiente
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Separador -->
+            <hr class="border-brand-gray-700 my-10">
+
+            <!-- Sección 4: Precio e Interés -->
+            <div class="space-y-8">
+                <h2 class="text-2xl font-bold text-brand-blue-300">Sección 4: Precio e Interés</h2>
+
+                <!-- Pregunta 9 -->
+                <div>
+                    <label class="text-lg font-semibold text-white block mb-3">9. SerenoX será un dispositivo de tecnología avanzada. ¿Cuánto esperarías pagar por una solución *wearable* efectiva que te mantenga fresco todo el día?</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q9_precio" value="Menos de $50" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            Menos de $50 USD
+                        </label>
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q9_precio" value="$50 - $99" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            $50 - $99 USD
+                        </label>
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q9_precio" value="$100 - $149" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            $100 - $149 USD
+                        </label>
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q9_precio" value="$150 - $199" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            $150 - $199 USD
+                        </label>
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q9_precio" value="$200 o mas" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            $200 USD o más
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 10 -->
+                <div>
+                    <label class="text-lg font-semibold text-white block mb-3">10. ¿Qué tan probable es que compraras SerenoX cuando se lance?</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q10_probabilidad_compra" value="1 - Definitivamente no" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            (1) Definitivamente no lo compraría
+                        </label>
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q10_probabilidad_compra" value="2 - Probablemente no" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            (2) Probablemente no
+                        </label>
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q10_probabilidad_compra" value="3 - Quizas" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            (3) Quizás, necesito más información
+                        </label>
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q10_probabilidad_compra" value="4 - Probablemente si" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            (4) Probablemente sí
+                        </label>
+                        <label class="flex items-center text-brand-gray-300 p-3 bg-brand-gray-800 rounded-lg border border-brand-gray-700 hover:bg-brand-gray-700">
+                            <input type="radio" name="q10_probabilidad_compra" value="5 - Definitivamente si" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            (5) ¡Definitivamente sí! ¡Lo necesito ya!
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Separador -->
+            <hr class="border-brand-gray-700 my-10">
+
+            <!-- Sección 5: ¡Únete a la Revolución! -->
+            <div class="space-y-8 bg-brand-gray-800 p-8 rounded-lg border border-brand-gray-700">
+                <h2 class="text-2xl font-bold text-brand-blue-300">Sección 5: ¡Únete a la Revolución!</h2>
+                <p class="text-brand-gray-300">¡Estamos a punto de lanzar nuestro programa de *Beta Testers* y la lista de espera oficial para el lanzamiento el 2 de febrero de 2026!</p>
+
+                <!-- Pregunta 11 -->
+                <div>
+                    <label class="text-lg font-semibold text-white block mb-3">11. ¿Te gustaría ser considerado para nuestro programa de Beta Testers (probar el producto gratis) O unirte a la lista de espera?</label>
+                    <div class="space-y-2">
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q11_unirse" value="Beta Tester" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            Sí, me interesa ser Beta Tester
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q11_unirse" value="Lista de Espera" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            Sí, quiero estar en la Lista de Espera
+                        </label>
+                        <label class="flex items-center text-brand-gray-300">
+                            <input type="radio" name="q11_unirse" value="No" class="mr-2 text-brand-blue-500 focus:ring-brand-blue-500">
+                            No, gracias
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Pregunta 12 -->
+                <div>
+                    <label for="email" class="text-lg font-semibold text-white block mb-3">12. Si respondiste SÍ, por favor déjanos tu correo electrónico.</label>
+                    <p class="text-sm text-brand-gray-300 mb-3">(Prometemos no enviar spam, solo actualizaciones importantes de DEFXON).</p>
+                    <input 
+                        type="email" 
+                        name="email" 
+                        id="email" 
+                        placeholder="tu.correo@ejemplo.com"
+                        class="mt-1 block w-full px-4 py-3 border border-brand-gray-600 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-blue-500 focus:border-brand-blue-500 bg-brand-gray-700 text-white">
+                </div>
+            </div>
+
+            <!-- Botón de Envío -->
+            <div class="mt-12">
+                <button type="submit" class="w-full bg-brand-blue-500 hover:bg-brand-blue-600 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors shadow-lg transform hover:scale-105">
+                    ¡Enviar Mi Opinión y Unirme!
+                </button>
+            </div>
+
+        </form>
+
+    </main>
+
+    <!-- Footer Simple -->
+    <footer class="text-center py-10 mt-16 border-t border-brand-gray-700">
+        <p class="text-brand-gray-300">&copy; 2025 DEFXON Company. Todos los derechos reservados.</p>
+        <p class="text-sm text-brand-gray-400 mt-2">
+            Fundadores: Francis Alcantara, Darlyn Alcantara, Edual Jimenez
+        </p>
+    </footer>
+
+</body>
+</html>
